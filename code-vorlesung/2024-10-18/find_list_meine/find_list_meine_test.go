@@ -7,7 +7,7 @@ func ExampleFindElementBinary() {
 
 	fmt.Println(FindElementBinary(list, 5))
 	fmt.Println(FindElementBinary(list, 9))
-	fmt.Println(FindElementBinary(list, 42))
+	fmt.Println(FindElementBinary(list, 43))
 
 	//Output:
 	//2
