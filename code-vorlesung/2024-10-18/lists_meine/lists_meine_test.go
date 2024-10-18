@@ -6,4 +6,10 @@ func ExampleListDemo() {
 	//Output:
 	//1
 	//9
+	//
+	//1
+	//3
+	//5
+	//7
+	//9
 }
