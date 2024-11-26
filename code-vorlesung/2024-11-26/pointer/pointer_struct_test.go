@@ -36,3 +36,22 @@ func ExampleTick() {
 	// Output:
 
 }
+
+func ExampleUhrzeit_Tack_overflow() {
+	u1 := Uhrzeit{0, 0, 59}
+	u2 := Uhrzeit{0, 59, 59}
+	u3 := Uhrzeit{23, 59, 59}
+
+	u1.Tack()
+	u2.Tack()
+	u3.Tack()
+
+	fmt.Println(u1)
+	fmt.Println(u2)
+	fmt.Println(u3)
+
+	// Output:
+	// {0 1 0}
+	// {1 0 0}
+	// {0 0 0}
+}
