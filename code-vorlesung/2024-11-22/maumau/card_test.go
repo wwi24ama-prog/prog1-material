@@ -45,3 +45,15 @@ func ExampleCard_Image() {
 	// │      7│
 	// └───────┘
 }
+
+func ExampleDeck_Shuffle() {
+	deck := New32()
+	fmt.Println(deck)
+
+	deck.Shuffle()
+	fmt.Println()
+	fmt.Println()
+	fmt.Println(deck)
+
+	// Output:
+}
