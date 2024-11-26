@@ -16,6 +16,17 @@ func Tick(u *Uhrzeit) {
 // Tack zählt die Sekunde um 1 hoch.
 func (u *Uhrzeit) Tack() {
 	u.Sekunde++
+	if u.Sekunde == 60 {
+		u.Sekunde = 0
+		u.Minute++
+	}
+	if u.Minute == 60 {
+		u.Minute = 0
+		u.Stunde++
+	}
+	if u.Stunde == 24 {
+		u.Stunde = 0
+	}
 }
 
 // Tock zählt auch die Sekunde hoch und liefert das Ergebnis als neues Struct.
@@ -38,6 +49,7 @@ func ExampleTick() {
 }
 
 func ExampleUhrzeit_Tack_overflow() {
+
 	u1 := Uhrzeit{0, 0, 59}
 	u2 := Uhrzeit{0, 59, 59}
 	u3 := Uhrzeit{23, 59, 59}
