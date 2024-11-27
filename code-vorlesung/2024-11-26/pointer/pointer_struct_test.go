@@ -11,6 +11,23 @@ type Uhrzeit struct {
 // Tick zählt die Sekunde um 1 hoch.
 func Tick(u *Uhrzeit) {
 	u.Sekunde++
+	u.Minute += u.Sekunde / 60
+	u.Stunde += u.Minute / 60
+	u.Stunde = u.Stunde % 24
+	u.Minute %= 60
+	u.Sekunde %= 60
+
+	// if u.Sekunde == 60 {
+	// 	u.Minute++
+	// 	u.Sekunde = 0
+	// }
+	// if u.Minute == 60 {
+	// 	u.Stunde++
+	// 	u.Minute = 0
+	// }
+	// if u.Stunde == 24 {
+	// 	u.Stunde = 0
+	// }
 }
 
 // Tack zählt die Sekunde um 1 hoch.
