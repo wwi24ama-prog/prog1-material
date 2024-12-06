@@ -34,6 +34,7 @@ func FirstA(s string) int {
 	// return FirstA(s[1:]) + 1
 }
 
+// Liefert true, falls c ein Vokal ist.
 func isVowel(c byte) bool {
 	return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
 }
