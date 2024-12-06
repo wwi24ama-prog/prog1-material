@@ -35,13 +35,61 @@ func ExampleIsPrime() {
 }
 
 func PrimeFactors(n int) []int {
-	// TODO
-	return []int{}
+	result := []int{}
+
+	c := 2
+
+	for n > 1 {
+		if n%c == 0 {
+			result = append(result, c)
+			n = n / c
+		} else {
+			c++
+		}
+	}
+
+	return result
+}
+
+func PrimeFactorsRecursive(n int) []int {
+	return PrimeFactorsRecursiveHelper(n, 2)
+}
+
+func PrimeFactorsRecursiveHelper(n, c int) []int {
+	if n <= 1 {
+		return []int{}
+	}
+
+	result := []int{}
+
+	if n%c == 0 {
+		result = append(result, c)
+		n = n / c
+	} else {
+		c++
+	}
+
+	return append(result, PrimeFactorsRecursiveHelper(n, c)...)
+
 }
 
 func ExamplePrimeFactors() {
+	fmt.Println(PrimeFactors(1))
 	fmt.Println(PrimeFactors(60))
+	fmt.Println(PrimeFactors(42))
+	fmt.Println(PrimeFactors(23))
+	fmt.Println(PrimeFactorsRecursive(1))
+	fmt.Println(PrimeFactorsRecursive(60))
+	fmt.Println(PrimeFactorsRecursive(42))
+	fmt.Println(PrimeFactorsRecursive(23))
 
 	// Output:
+	// []
 	// [2 2 3 5]
+	// [2 3 7]
+	// [23]
+	// []
+	// [2 2 3 5]
+	// [2 3 7]
+	// [23]
 }
