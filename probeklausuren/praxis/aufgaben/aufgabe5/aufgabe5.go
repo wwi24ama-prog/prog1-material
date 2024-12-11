@@ -10,8 +10,7 @@ MAX. PUNKTE: 5
 // Dies ist dann der Fall, wenn die Farben (Suit) gleich sind und
 // der Rang größer als bei other ist.
 func (c Card) GreaterThan(other Card) bool {
-	// TODO
-	return false
+	return c.Suit == other.Suit && c.Rank > other.Rank
 }
 
 // Vorgegebener Datentyp
